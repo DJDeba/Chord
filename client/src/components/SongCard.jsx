@@ -147,7 +147,7 @@ const SongCard = ({data, index, type}) => {
             <motion.img whileHover={{scale: 1.05}} src={data.imageURL} className='w-full h-full rounded-lg object-cover'/>
         </div>
         <p className='text-base text-center text-textColor font-semibold my-2'>
-            {data.name.length > 25 ? `${data.name.slice(0,25)}..` : data.name}
+            {data.name.length > 20 ? `${data.name.slice(0,20)}..` : data.name}
             {data.artist && (
                  <span className='block text-sm text-gray-400 my-1'>
                  {data.artist.length > 25 ? `${data.artist.slice(0,25)}...` : data.artist}

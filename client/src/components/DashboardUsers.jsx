@@ -87,7 +87,7 @@ const DashboardUsers = () => {
     <div className='w-full p-4 flex flex-col items-center justify-center'>
       <div className='relative w-full py-12 min-h-[400px] overflow-x-scroll my-4 flex flex-col items-center justify-start p-4 border border-gray-300 rounded-md gap-3'>
         <div className='absolute top-4 left-4'>
-          <p className='text-sm font-semibold'>
+          <p className='text-sm text-headingColor font-semibold'>
             Count: <span className='text-xl font-bold text-textColor'>{allUsers?.length}</span>
           </p>
         </div>

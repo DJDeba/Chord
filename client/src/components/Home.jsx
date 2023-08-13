@@ -1,13 +1,18 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from './Header'
-import SongCard from './SongCard'
 import { useStateValue } from '../context/StateProvider';
 import { getAllSongs } from '../api';
 import { actionType } from '../context/reducer';
 import HomeSongCard from './HomeSongCard';
+import { Rockbg } from '../assets/img';
+import SearchBar from './SearchBar';
 
 const Home = () => {
   const[{allSongs}, dispatch] = useStateValue();
+  const [searchResults, setSearchResults] = useState([]);
+  const handleSearch = (term) => {
+    console.log('Searching for:', term);
+  };
   
   useEffect(() => {
     if(!allSongs){
@@ -20,9 +25,13 @@ const Home = () => {
     }
   }, [])
   return (
-    <div className="w-full h-full flex flex-col items-center justify-center bg-primary">
+    <div className="relative w-screen h-screen">
       <Header />
-      <div className='relative w-full h-full my-4 p-4 py-16 border border-gray-800 rounded-md'>
+      <img src={Rockbg} type="image/jpg" className="w-full h-full object-cover"/>
+      <div className='absolute top-40 w-full flex items-center justify-center bg-none rounded-md'>
+        <SearchBar onSearch={handleSearch} />
+      </div>
+      <div className='absolute w-full top-52 flex items-center justify-center bg-none rounded-md'>
         <SongContainer  data={allSongs}/>
       </div>
     </div>
