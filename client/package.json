@@ -45,5 +45,8 @@
   },
   "devDependencies": {
     "tailwind-scrollbar": "^3.0.4"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
