@@ -23,7 +23,7 @@ const Home = () => {
         })
       })
     }
-  }, [])
+  }, [dispatch])
   return (
     <div className="relative w-screen h-screen">
       <Header />
