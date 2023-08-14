@@ -16,5 +16,8 @@
     "firebase-admin": "^11.9.0",
     "mongoose": "^7.3.4",
     "nodemon": "^2.0.22"
+  },
+  "engines": {
+    "node": ">=14.20.1"
   }
 }
