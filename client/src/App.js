@@ -44,20 +44,6 @@ const App = () => {
     });
   }, []);
 
-  useEffect(() => {
-    if (!allSongs) {
-      getAllSongs()
-        .then((data) => {
-          dispatch({
-            type: actionType.SET_ALL_SONGS,
-            allSongs: data.songs,
-          });
-        })
-        .catch((error) => {
-          console.error('Error fetching songs:', error);
-        });
-    }
-  }, []);
 
   return (
     <AnimatePresence>
