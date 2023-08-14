@@ -1,0 +1,8 @@
+{
+  "name": "chord",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/DJDeba/Chord.git",
+  "author": "DJDeba <chakradeb321@gmail.com>",
+  "license": "MIT"
+}
