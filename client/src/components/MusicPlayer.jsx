@@ -40,7 +40,7 @@ const MusicPlayer = () => {
   };
 
   const nextTrack = () => {
-    if (songIndex > allSongs.length) {
+    if (songIndex > allSongs.length - 1) {
       dispatch({
         type: actionType.SET_SONG_INDEX,
         songIndex: 0,
@@ -170,17 +170,17 @@ export const PlayListCard = () => {
     }
   }, []);
 
-  const setCurrentPlaySong = (songIndex) => {
+  const setCurrentPlaySong = (si) => {
     if (!isSongPlaying) {
       dispatch({
         type: actionType.SET_ISSONG_PLAYING,
         isSongPlaying: true,
       });
     }
-    if (songIndex !== songIndex) {
+    if (songIndex !== si) {
       dispatch({
         type: actionType.SET_SONG_INDEX,
-        songIndex: songIndex,
+        songIndex: si,
       });
     }
   };

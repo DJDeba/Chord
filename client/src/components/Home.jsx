@@ -8,28 +8,47 @@ import { Rockbg } from '../assets/img';
 import SearchBar from './SearchBar';
 
 const Home = () => {
-  const[{allSongs}, dispatch] = useStateValue();
-  const [searchResults, setSearchResults] = useState([]);
-  const handleSearch = (term) => {
-    console.log('Searching for:', term);
-  };
+  const[{allSongs, searchTerm}, dispatch] = useStateValue();
+  const [filteredSongs, setFilteredSongs] = useState(null);
   
   useEffect(() => {
     if(!allSongs){
       getAllSongs().then((data) => {
         dispatch({
           type: actionType.SET_ALL_SONGS,
-          allSongs : data.songs,
+          allSongs : data.song,
         })
       })
     }
-  }, [dispatch])
+  }, [])
+
+  useEffect(() => {
+    if (searchTerm.length > 0) {
+      const filtered = allSongs.filter(
+        (data) =>
+          data.artist.toLowerCase().includes(searchTerm) ||
+          data.language.toLowerCase().includes(searchTerm) ||
+          data.name.toLowerCase().includes(searchTerm)
+      );
+      setFilteredSongs(filtered);
+    } else {
+      setFilteredSongs(null);
+    }
+  }, [searchTerm]);
+
   return (
     <div className="relative w-screen h-screen">
       <Header />
       <img src={Rockbg} type="image/jpg" className="w-full h-full object-cover"/>
       <div className='absolute top-40 w-full flex items-center justify-center bg-none rounded-md'>
-        <SearchBar onSearch={handleSearch} />
+        <SearchBar />
+        {searchTerm.length > 0 && (
+        <p className="text-base text-textColor">
+          <span className="text-xl text-cartBg font-semibold">
+            {searchTerm}
+          </span>
+        </p>
+      )}
       </div>
       <div className='absolute w-full top-52 flex items-center justify-center bg-none rounded-md'>
         <SongContainer  data={allSongs}/>

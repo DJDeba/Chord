@@ -12,5 +12,5 @@ export const initialState = {
     isSongPlaying: false,
     songIndex: 0,
     miniPlayer: false,
-    searchTerm: null,
+    searchTerm: "",
 };
