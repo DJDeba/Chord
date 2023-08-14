@@ -282,7 +282,7 @@ const DashboardNewSong = () => {
           )}
         </div>
         
-        <p className="text-xl font-semibold text-headingColor">Artist Details</p>
+        <p className="text-xl font-semibold text-textColor">Artist Details</p>
         <div className=" bg-card backdrop-blur-md w-full h-300 rounded-md border-2 border-dotted border-gray-300 cursor-pointer">
           {isArtistLoading && <FileLoader progress = {artistUploadProgress}/>}
           {!isArtistLoading && (
@@ -317,7 +317,7 @@ const DashboardNewSong = () => {
           )}
         </div>
 
-        <p className="text-xl font-semibold text-headingColor">Album Details</p>
+        <p className="text-xl font-semibold text-textColor">Album Details</p>
         <div className=" bg-card backdrop-blur-md w-full h-300 rounded-md border-2 border-dotted border-gray-300 cursor-pointer">
           {isAlbumLoading && <FileLoader progress = {albumUploadProgress}/>}
           {!isAlbumLoading && (
@@ -436,7 +436,7 @@ export const FileUploader =  ({updateState, setProgress, isLoading, isImage}) =>
         <p className="font-bold text-2xl">
           <BiCloudUpload />
         </p>
-        <p className="text-lg">click to upload { isImage ? "an image" : "an audio"}</p>
+        <p className="text-lg text-headingColor">click to upload { isImage ? "an image" : "an audio"}</p>
       </div>
     </div>
     <input type="file" name="upload-file" accept={`${isImage ? "image/*" : "audio/*"}`} className="w-0 h-0" onChange={uploadFile}/>

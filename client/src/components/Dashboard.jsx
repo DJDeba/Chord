@@ -22,7 +22,7 @@ const Dashboard = () => {
           <NavLink to={"/dashboard/users"} className={({isActive}) => isActive ? isActiveStyles : isNotActiveStyles}>Users</NavLink>
           <NavLink to={"/dashboard/songs"} className={({isActive}) => isActive ? isActiveStyles : isNotActiveStyles}>Songs</NavLink>
           <NavLink to={"/dashboard/artists"} className={({isActive}) => isActive ? isActiveStyles : isNotActiveStyles}>Artists</NavLink>
-          <NavLink to={"/dashboard/Albums"} className={({isActive}) => isActive ? isActiveStyles : isNotActiveStyles}>Albums</NavLink>
+          <NavLink to={"/dashboard/albums"} className={({isActive}) => isActive ? isActiveStyles : isNotActiveStyles}>Albums</NavLink>
           </div>
           <div className='my-4 w-full p-4'>
             <Routes>
