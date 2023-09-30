@@ -22,19 +22,6 @@ const Home = () => {
     }
   }, [])
 
-  useEffect(() => {
-    if (searchTerm.length > 0) {
-      const filtered = allSongs.filter(
-        (data) =>
-          data.artist.toLowerCase().includes(searchTerm) ||
-          data.language.toLowerCase().includes(searchTerm) ||
-          data.name.toLowerCase().includes(searchTerm)
-      );
-      setFilteredSongs(filtered);
-    } else {
-      setFilteredSongs(null);
-    }
-  }, [searchTerm]);
 
   return (
     <div className="relative w-screen h-screen">
