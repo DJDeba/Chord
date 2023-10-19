@@ -8,10 +8,11 @@ import { Rockbg } from '../assets/img';
 import SearchBar from './SearchBar';
 
 const Home = () => {
-  const[{allSongs, searchTerm}, dispatch] = useStateValue();
+  const[{allSongs, allArtists, searchTerm}, dispatch] = useStateValue();
   const [filteredSongs, setFilteredSongs] = useState(null);
   
   useEffect(() => {
+    console.log(searchTerm)
     if(!allSongs){
       getAllSongs().then((data) => {
         dispatch({
@@ -22,6 +23,16 @@ const Home = () => {
     }
   }, [])
 
+  useEffect(() => {
+    if (allSongs && searchTerm) {
+      const filtered = allSongs.filter((song) =>
+        song.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredSongs(filtered);
+    } else {
+      setFilteredSongs(null);
+    }
+  }, [allSongs, searchTerm]);
 
   return (
     <div className="relative w-screen h-screen">
@@ -29,23 +40,14 @@ const Home = () => {
       <img src={Rockbg} type="image/jpg" className="w-full h-full object-cover"/>
       <div className='absolute top-40 w-full flex items-center justify-center bg-none rounded-md'>
         <SearchBar />
-        {searchTerm.length > 0 && (
-        <p className="text-base text-textColor">
-          <span className="text-xl text-cartBg font-semibold">
-            {searchTerm}
-          </span>
-        </p>
-      )}
       </div>
       <div className='absolute w-full top-52 flex items-center justify-center bg-none rounded-md'>
-        <SongContainer  data={allSongs}/>
+        {searchTerm.length > 0 || !filteredSongs ? (<SongContainer data={filteredSongs || allSongs} />) : null}
       </div>
     </div>
   );
 };
 export default Home
-
-
 
 export const SongContainer = ({data}) => {
   return(
