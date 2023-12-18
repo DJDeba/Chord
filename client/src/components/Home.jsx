@@ -35,7 +35,7 @@ const Home = () => {
   }, [allSongs, searchTerm]);
 
   return (
-    <div className="relative w-screen h-screen">
+    <div className="relative w-full h-full">
       <Header />
       <img src={Rockbg} type="image/jpg" className="w-full h-full object-cover"/>
       <div className='absolute top-40 w-full flex items-center justify-center bg-none rounded-md'>
