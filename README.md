@@ -59,16 +59,18 @@ To run the CHORD Music Streaming Application locally, follow these steps:
    **Client `.env` file**:
 
    ```ini
-   REACT_APP_FIREBASE_API_KEY=your_firebase_api_key
-   REACT_APP_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
-   REACT_APP_FIREBASE_PROJECT_ID=your_firebase_project_id
+    REACT_APP_FIREBASE_API_KEY = "your_firebase_api_key"
+    REACT_APP_FIREBASE_AUTH_DOMAIN = "your_firebase_auth_domain"
+    REACT_APP_FIREBASE_PROJECT_ID = "your_firebase_project_id"
+    REACT_APP_FIREBASE_STORAGE_BUCKET = "your_firebase_storage_bucket"
+    REACT_APP_FIREBASE_MESSEGING_ID = "your_firebase_messaging_id"
+    REACT_APP_FIREBASE_APP_ID = "your_firebase_app_id"
    ```
 
    **Server `.env` file**:
 
    ```ini
-   MONGO_URI=your_mongodb_connection_string
-   ADMIN_EMAIL=admin_email_address
+   DB_STRING = your_mongodb_string
    ```
 
 5. Open your browser and visit `http://localhost:3000` to access the CHORD Music Streaming Application.
