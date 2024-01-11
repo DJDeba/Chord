@@ -70,7 +70,7 @@ To run the CHORD Music Streaming Application locally, follow these steps:
    **Server `.env` file**:
 
    ```ini
-   DB_STRING = your_mongodb_string
+   DB_STRING = "your_mongodb_string"
    ```
 
 5. Open your browser and visit `http://localhost:3000` to access the CHORD Music Streaming Application.
