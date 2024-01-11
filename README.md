@@ -11,7 +11,7 @@ Welcome to the CHORD Music Streaming Application repository! CHORD is a full-sta
 
 - Admin Accounts:
   - Admins have extended access and control over the application.
-  - To become an admin, send your account username and email to the admin's email address.
+  - To become an admin, send your account username and email to chakradeb321@gmail.com.
   - Admins have access to a dashboard where they can:
     - View details about users, songs, artists, and albums.
     - Delete user accounts.
